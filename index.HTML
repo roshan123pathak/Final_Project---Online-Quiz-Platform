@@ -1,1 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Quiz Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat-widget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <h1 class="logo"><span class="logo-emoji">🧠</span> Quiz Master</h1>
+            <div class="user-profile">
+                <div class="user-name">Welcome, <span id="username-display">User</span>!</div>
+                <a href="#" class="profile-link">
+                    <span class="profile-text">Profile</span>
+                    <div class="profile-avatar">
+                        <div class="emoji-avatar">👤</div>
+                    </div>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="settings.html" class="menu-item">Settings</a>
+                    <a href="myscores.html" class="menu-item">My Scores</a>
+                    <a href="#" id="logout-btn" class="menu-item">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <nav class="main-nav">
+            <ul class="nav-tabs">
+                <li class="nav-item active"><a href="#" data-target="available-quizzes">Available Quizzes</a></li>
+                <li class="nav-item"><a href="#" data-target="recent-activity">Recent Activity</a></li>
+                <li class="nav-item"><a href="#" data-target="leaderboard">Leaderboard</a></li>
+            </ul>
+        </nav>
+
+        <div class="content-section" id="available-quizzes">
+            <main class="quiz-container">
+                <!-- Quiz Card: General Knowledge -->
+                    <div class="quiz-card">
+                        <div class="quiz-image general-knowledge-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">General Knowledge</h2>
+                                <span class="difficulty medium">Medium</span>
+                            </div>
+                            <p class="quiz-description">Test your knowledge on various topics</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">30 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">General</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card: Science Quiz -->
+                    <div class="quiz-card">
+                        <div class="quiz-image science-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">Science Quiz</h2>
+                                <span class="difficulty hard">Hard</span>
+                            </div>
+                            <p class="quiz-description">Challenge yourself with science questions</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">35 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">Science</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Quiz Card: Cyber Security -->
+                    <div class="quiz-card">
+                        <div class="quiz-image cybersecurity-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">Cyber Security</h2>
+                                <span class="difficulty hard">Hard</span>
+                            </div>
+                            <p class="quiz-description">Test your knowledge on cybersecurity concepts and practices</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">35 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">Tech</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card: Artificial Intelligence -->
+                    <div class="quiz-card">
+                        <div class="quiz-image ai-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">Artificial Intelligence</h2>
+                                <span class="difficulty medium">Medium</span>
+                            </div>
+                            <p class="quiz-description">Explore the concepts and applications of AI</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">30 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">Tech</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card: Machine Learning -->
+                    <div class="quiz-card">
+                        <div class="quiz-image ml-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">Machine Learning</h2>
+                                <span class="difficulty hard">Hard</span>
+                            </div>
+                            <p class="quiz-description">Dive into algorithms and concepts of machine learning</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">35 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">Tech</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card: Data Structures -->
+                    <div class="quiz-card">
+                        <div class="quiz-image dsa-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">Data Structures</h2>
+                                <span class="difficulty medium">Medium</span>
+                            </div>
+                            <p class="quiz-description">Test your knowledge on arrays, lists, trees and more</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">30 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">CS</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card: Web Development -->
+                    <div class="quiz-card">
+                        <div class="quiz-image webdev-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">Web Development</h2>
+                                <span class="difficulty easy">Easy</span>
+                            </div>
+                            <p class="quiz-description">Challenge yourself with questions on HTML, CSS and JavaScript</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">25 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">Dev</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card: Programming Languages -->
+                    <div class="quiz-card">
+                        <div class="quiz-image programming-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">Programming Languages</h2>
+                                <span class="difficulty medium">Medium</span>
+                            </div>
+                            <p class="quiz-description">Test your knowledge about various programming languages and paradigms</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">30 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">Coding</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Card: History Trivia -->
+                    <div class="quiz-card">
+                        <div class="quiz-image history-img"></div>
+                        <div class="quiz-content">
+                            <div class="quiz-header">
+                                <h2 class="quiz-title">History Trivia</h2>
+                                <span class="difficulty easy">Easy</span>
+                            </div>
+                            <p class="quiz-description">Explore historical events and figures</p>
+                            
+                            <div class="quiz-details">
+                                <div class="detail">
+                                    <span class="icon time-icon"></span>
+                                    <span class="text">25 sec/q</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">10 questions</span>
+                                </div>
+                                <div class="detail">
+                                    <span class="text">History</span>
+                                </div>
+                            </div>
+                            
+                            <button class="start-quiz-btn">Start Quiz</button>
+                        </div>
+                    </div>
+                    
+                    <!-- More Quizzes Card -->
+                    <div class="more-quiz-card" id="more-quizzes">
+                        <div class="plus-icon">+</div>
+                        <p class="more-quiz-text">More Quizzes</p>
+                    </div>
+            </main>
+        </div>
+
+        <!-- New User Reviews Section -->
+        <section class="testimonials-section">
+            <div class="section-header">
+                <h2 class="section-title">What Users Say</h2>
+                <p class="section-subtitle">Feedback from our top users</p>
+            </div>
+            
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar avatar-emily">👩‍💻</div>
+                        <div class="testimonial-user-info">
+                            <div class="testimonial-name">Emily Chen <span class="user-emoji">👩‍💻</span></div>
+                            <div class="testimonial-role">Data Scientist</div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Quiz Master has transformed how I study advanced concepts. The AI questions adapt to my skill level, and I've seen a 40% improvement in my retention of complex algorithms. The variety of tech topics keeps me engaged daily!"</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-stat">
+                            <span class="stat-icon quiz-icon"></span>
+                            <span class="stat-label">87 quizzes</span>
+                        </div>
+                        <div class="testimonial-stat">
+                            <span class="stat-icon streak-icon"></span>
+                            <span class="stat-label">45 day streak</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar avatar-michael">🧙‍♂️</div>
+                        <div class="testimonial-user-info">
+                            <div class="testimonial-name">Michael Johnson <span class="user-emoji">🧙‍♂️</span></div>
+                            <div class="testimonial-role">CS Student</div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star half-filled">★</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-stat">
+                            <span class="stat-icon quiz-icon"></span>
+                            <span class="stat-label">63 quizzes</span>
+                        </div>
+                        <div class="testimonial-stat">
+                            <span class="stat-icon streak-icon"></span>
+                            <span class="stat-label">31 day streak</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar avatar-priya">🚀</div>
+                        <div class="testimonial-user-info">
+                            <div class="testimonial-name">Priya Sharma <span class="user-emoji">🚀</span></div>
+                            <div class="testimonial-role">Tech Lead</div>
+                        </div>
+                        <div class="testimonial-rating">
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                            <span class="star filled">★</span>
+                        </div>
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"I use Quiz Master to keep my team's skills sharp. The competitive leaderboard has boosted our team engagement and knowledge sharing. We've made it part of our weekly team activities, and it's genuinely improved our code reviews and technical discussions."</p>
+                    </div>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-stat">
+                            <span class="stat-icon quiz-icon"></span>
+                            <span class="stat-label">102 quizzes</span>
+                        </div>
+                        <div class="testimonial-stat">
+                            <span class="stat-icon streak-icon"></span>
+                            <span class="stat-label">60 day streak</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="content-section hidden" id="recent-activity">
+            <div class="activity-container">
+                <h2 class="section-title">Your Recent Activity</h2>
+                <p class="section-subtitle">Track your quiz performance over time</p>
+                <div class="activity-list" id="activity-list">
+                    <!-- Activity items will be dynamically inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <div class="content-section hidden" id="leaderboard">
+            <div class="leaderboard-container">
+                <h2 class="section-title">Global Leaderboard</h2>
+                <p class="section-subtitle">Top performers across all quizzes</p>
+                
+                <div class="leaderboard-list">
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-rank">1</div>
+                        <div class="leaderboard-user">
+                            <div class="leaderboard-avatar avatar-1">🏆</div>
+                            <div class="leaderboard-name">Alex Johnson</div>
+                        </div>
+                        <div class="leaderboard-score">
+                            <div class="trophy-icon"></div>
+                            <span>95</span>
+                        </div>
+                    </div>
+                    
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-rank">2</div>
+                        <div class="leaderboard-user">
+                            <div class="leaderboard-avatar avatar-2">🥇</div>
+                            <div class="leaderboard-name">Sam Wilson</div>
+                        </div>
+                        <div class="leaderboard-score">
+                            <div class="trophy-icon"></div>
+                            <span>92</span>
+                        </div>
+                    </div>
+                    
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-rank">3</div>
+                        <div class="leaderboard-user">
+                            <div class="leaderboard-avatar avatar-3">🥈</div>
+                            <div class="leaderboard-name">Taylor Swift</div>
+                        </div>
+                        <div class="leaderboard-score">
+                            <div class="trophy-icon"></div>
+                            <span>88</span>
+                        </div>
+                    </div>
+                    
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-rank">4</div>
+                        <div class="leaderboard-user">
+                            <div class="leaderboard-avatar avatar-4">🥉</div>
+                            <div class="leaderboard-name">Jamie Smith</div>
+                        </div>
+                        <div class="leaderboard-score">
+                            <div class="trophy-icon"></div>
+                            <span>85</span>
+                        </div>
+                    </div>
+                    
+                    <div class="leaderboard-item">
+                        <div class="leaderboard-rank">5</div>
+                        <div class="leaderboard-user">
+                            <div class="leaderboard-avatar avatar-5">🎯</div>
+                            <div class="leaderboard-name">Casey Brown</div>
+                        </div>
+                        <div class="leaderboard-score">
+                            <div class="trophy-icon"></div>
+                            <span>82</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="enhanced-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quiz Master</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                        <li><a href="#">Desktop App</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Quiz AI</a></li>
+                        <li><a href="#">Collaboration</a></li>
+                        <li><a href="#">Quiz Editor</a></li>
+                        <li><a href="#">Custom Quizzes</a></li>
+                        <li><a href="#">Teams</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                        <li><a href="#">Report Abuse</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Topics</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Mathematics</a></li>
+                        <li><a href="#">Programming</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright-bar">
+                <div>© <span id="copyright-year">2025</span> QUIZ MASTER, INC. ALL RIGHTS RESERVED.</div>
+                <button id="scroll-top" class="scroll-top">Back to top</button>
+            </div>
+        </footer>
+        
+        <script src="script.js"></script>
+        <script src="footer.js"></script>
+        <script src="chat-widget.js"></script>
+    </div>
+</body>
+</html>
 
