@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Settings - Quiz Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat-widget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <h1 class="logo"><span class="logo-emoji">🧠</span> Quiz Master</h1>
+            <div class="user-profile">
+                <div class="user-name">Welcome, <span id="username-display">User</span>!</div>
+                <a href="#" class="profile-link">
+                    <span class="profile-text">Profile</span>
+                    <div class="profile-avatar">
+                        <div class="emoji-avatar">👤</div>
+                    </div>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="settings.html" class="menu-item">Settings</a>
+                    <a href="myscores.html" class="menu-item">My Scores</a>
+                    <a href="#" id="logout-btn" class="menu-item">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="settings-container">
+            <div class="settings-header">
+                <h2 class="settings-title">Settings</h2>
+                <p class="settings-subtitle">Customize your quiz master experience</p>
+            </div>
+
+            <div class="settings-section">
+                <h3 class="section-heading">Profile Settings</h3>
+                
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label for="display-name">Display Name</label>
+                        <input type="text" id="display-name" class="settings-input">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Profile Emoji</label>
+                        <div class="emoji-picker">
+                            <div class="emoji-grid" id="emoji-grid">
+                                <!-- Emojis will be inserted here by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="settings-input" placeholder="your@email.com">
+                    </div>
+                    
+                    <button id="save-profile" class="settings-btn primary">Save Profile</button>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3 class="section-heading">Preferences</h3>
+                
+                <div class="settings-form">
+                    <div class="form-group">
+                        <label>Quiz Difficulty</label>
+                        <div class="radio-group">
+                            <label class="radio-option">
+                                <input type="radio" name="difficulty" value="easy"> Easy
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="difficulty" value="medium" checked> Medium
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="difficulty" value="hard"> Hard
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Sound Effects</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="sound-effects" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Animation Effects</label>
+                        <label class="toggle-switch">
+                            <input type="checkbox" id="animation-effects" checked>
+                            <span class="toggle-slider"></span>
+                        </label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="language">Language</label>
+                        <select id="language" class="settings-input">
+                            <option value="en">English</option>
+                            <option value="es">Español</option>
+                            <option value="fr">Français</option>
+                            <option value="de">Deutsch</option>
+                            <option value="zh">中文</option>
+                        </select>
+                    </div>
+                    
+                    <button id="save-preferences" class="settings-btn primary">Save Preferences</button>
+                </div>
+            </div>
+            
+            <div class="settings-section">
+                <h3 class="section-heading">Account</h3>
+                
+                <div class="settings-form">
+                    <button id="change-password" class="settings-btn secondary">Change Password</button>
+                    <button id="delete-account" class="settings-btn danger">Delete Account</button>
+                </div>
+            </div>
+            
+            <div class="actions-container">
+                <a href="index.html" class="back-link">
+                    <span class="back-icon"></span> Back to Homepage
+                </a>
+            </div>
+        </div>
+
+        <footer class="enhanced-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quiz Master</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                        <li><a href="#">Desktop App</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- ...existing code... -->
+                
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright-bar">
+                <div>© <span id="copyright-year">2025</span> QUIZ MASTER, INC. ALL RIGHTS RESERVED.</div>
+                <button id="scroll-top" class="scroll-top">Back to top</button>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+    <script src="chat-widget.js"></script>
+</body>
+</html>
