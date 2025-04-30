@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Quiz in Progress - Quiz Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat-widget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+</head>
+<body class="quiz-page">
+    <div class="app-container">
+        <header class="main-header">
+            <h1 class="logo"><span class="logo-emoji">🧠</span> Quiz Master</h1>
+            <div class="user-profile">
+                <div class="user-name">Welcome, <span id="username-display">User</span>!</div>
+                <a href="#" class="profile-link">
+                    <span class="profile-text">Profile</span>
+                    <div class="profile-avatar">
+                        <div class="emoji-avatar">👤</div>
+                    </div>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="settings.html" class="menu-item">Settings</a>
+                    <a href="myscores.html" class="menu-item">My Scores</a>
+                    <a href="#" id="logout-btn" class="menu-item">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="quiz-progress-container">
+            <div class="quiz-info">
+                <h2 id="quiz-title">General Knowledge Quiz</h2>
+                <div class="quiz-progress">
+                    <span id="current-question">Question 1</span> of <span id="total-questions">10</span>
+                    <div class="timer">
+                        <span id="timer-value">0s</span>
+                    </div>
+                </div>
+            </div>
+            <div class="progress-bar">
+                <div class="progress" id="quiz-progress-bar" style="width: 10%;"></div>
+            </div>
+        </div>
+
+        <div class="question-container">
+            <h3 id="question-text">What is the capital of France?</h3>
+            
+            <div class="options-container">
+                <div class="option-item" data-option="A">
+                    <div class="option-label">A</div>
+                    <div class="option-text">Paris</div>
+                </div>
+                <div class="option-item" data-option="B">
+                    <div class="option-label">B</div>
+                    <div class="option-text">London</div>
+                </div>
+                <div class="option-item" data-option="C">
+                    <div class="option-label">C</div>
+                    <div class="option-text">Berlin</div>
+                </div>
+                <div class="option-item" data-option="D">
+                    <div class="option-label">D</div>
+                    <div class="option-text">Madrid</div>
+                </div>
+            </div>
+            
+            <div class="question-navigation">
+                <button id="prev-btn" class="nav-btn">
+                    <span class="nav-icon prev-icon"></span>
+                    Previous
+                </button>
+                <button id="next-btn" class="nav-btn primary">
+                    Next
+                    <span class="nav-icon next-icon"></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Replace the simple footer with the enhanced footer -->
+        <footer class="enhanced-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quiz Master</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mobile App</a></li>
+                        <li><a href="#">Desktop App</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Quiz AI</a></li>
+                        <li><a href="#">Collaboration</a></li>
+                        <li><a href="#">Quiz Editor</a></li>
+                        <li><a href="#">Custom Quizzes</a></li>
+                        <li><a href="#">Teams</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                        <li><a href="#">Report Abuse</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Topics</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Mathematics</a></li>
+                        <li><a href="#">Programming</a></li>
+                        <li><a href="#">Languages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright-bar">
+                <div>ALL RIGHTS RESERVED. COPYRIGHT © <span id="copyright-year">2025</span> QUIZ MASTER, INC.</div>
+                <button id="scroll-top" class="scroll-top">Scroll to top</button>
+            </div>
+        </footer>
+    </div>
+    <div id="feedback-container"></div>
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+    <script src="chat-widget.js"></script>
+</body>
+</html>
+
