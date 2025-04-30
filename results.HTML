@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 Quiz Results - Quiz Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat-widget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+</head>
+<body class="results-page">
+    <div class="app-container">
+        <header class="main-header">
+            <h1 class="logo"><span class="logo-emoji">🧠</span> Quiz Master</h1>
+            <div class="user-profile">
+                <div class="user-name">Welcome, <span id="username-display">User</span>!</div>
+                <a href="#" class="profile-link">
+                    <span class="profile-text">Profile</span>
+                    <div class="profile-avatar"></div>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="settings.html" class="menu-item">Settings</a>
+                    <a href="myscores.html" class="menu-item">My Scores</a>
+                    <a href="#" id="logout-btn" class="menu-item">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="results-container">
+            <div class="results-header">
+                <h2>Quiz Results</h2>
+            </div>
+
+            <div class="results-summary">
+                <div class="score-circle">
+                    <svg class="progress-ring" width="200" height="200">
+                        <circle class="progress-ring-circle-bg" cx="100" cy="100" r="80"></circle>
+                        <circle class="progress-ring-circle" id="progress-circle" cx="100" cy="100" r="80"></circle>
+                    </svg>
+                    <div class="score-percentage" id="score-percentage">0%</div>
+                </div>
+                <div class="score-details">
+                    <h3>You scored <span id="score-value">0</span> out of <span id="total-questions">0</span></h3>
+                    <div class="score-breakdown">
+                        <div class="score-item correct">
+                            <span class="score-dot"></span> Correct: <span id="correct-count">0</span>
+                        </div>
+                        <div class="score-item incorrect">
+                            <span class="score-dot"></span> Incorrect: <span id="incorrect-count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="results-actions">
+                <a href="index.html" class="results-btn back-btn">
+                    <i class="back-icon"></i> Back to Quizzes
+                </a>
+                <button class="results-btn retry-btn" id="retry-quiz">
+                    <i class="retry-icon"></i> Retry Quiz
+                </button>
+            </div>
+
+            <div class="question-breakdown">
+                <h3>Question Breakdown</h3>
+                <div class="breakdown-list" id="breakdown-list">
+                    <!-- Question breakdown items will be inserted here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Replace the simple footer with the enhanced footer -->
+        <footer class="enhanced-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quiz Master</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Mobile App</a></li>
+                        <li><a href="#">Desktop App</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Features</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Quiz AI</a></li>
+                        <li><a href="#">Collaboration</a></li>
+                        <li><a href="#">Quiz Editor</a></li>
+                        <li><a href="#">Custom Quizzes</a></li>
+                        <li><a href="#">Teams</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                        <li><a href="#">Report Abuse</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Topics</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Mathematics</a></li>
+                        <li><a href="#">Programming</a></li>
+                        <li><a href="#">Languages</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright-bar">
+                <div>ALL RIGHTS RESERVED. COPYRIGHT © <span id="copyright-year">2025</span> QUIZ MASTER, INC.</div>
+                <button id="scroll-top" class="scroll-top">Scroll to top</button>
+            </div>
+        </footer>
+        
+    </div>
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+    <script src="chat-widget.js"></script>
+</body>
+</html>
