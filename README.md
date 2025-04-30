@@ -13,7 +13,7 @@ The Ultimate Online Quiz Platform is a user-friendly web app for creating, manag
 ## Technologies Used
 
 - **Frontend**: HTML, CSS, JavaScript  
-- **Backend**: Python  
+- **Backend**: Python(Ongoing)
 - **Database**: Local file-based database (e.g., MYSQL)
 
 ## Installation
