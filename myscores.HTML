@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧠 My Scores - Quiz Master</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chat-widget.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+</head>
+<body>
+    <div class="app-container">
+        <header class="main-header">
+            <h1 class="logo"><span class="logo-emoji">🧠</span> Quiz Master</h1>
+            <div class="user-profile">
+                <div class="user-name">Welcome, <span id="username-display">User</span>!</div>
+                <a href="#" class="profile-link">
+                    <span class="profile-text">Profile</span>
+                    <div class="profile-avatar">
+                        <div class="emoji-avatar">👤</div>
+                    </div>
+                </a>
+                <div class="dropdown-menu">
+                    <a href="settings.html" class="menu-item">Settings</a>
+                    <a href="myscores.html" class="menu-item">My Scores</a>
+                    <a href="#" id="logout-btn" class="menu-item">Logout</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="scores-container">
+            <div class="scores-header">
+                <h2 class="scores-title">My Scores</h2>
+                <p class="scores-subtitle">Your quiz performance history</p>
+            </div>
+            
+            <div class="stats-overview">
+                <div class="stat-card">
+                    <div class="stat-value" id="total-quizzes">0</div>
+                    <div class="stat-label">Quizzes Taken</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="average-score">0%</div>
+                    <div class="stat-label">Average Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="highest-score">0%</div>
+                    <div class="stat-label">Highest Score</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="total-correct">0</div>
+                    <div class="stat-label">Total Correct Answers</div>
+                </div>
+            </div>
+            
+            <div class="scores-section">
+                <div class="section-header">
+                    <h3 class="section-title">Quiz History</h3>
+                    <select id="filter-scores" class="filter-dropdown">
+                        <option value="all">All Quizzes</option>
+                        <option value="recent">Most Recent</option>
+                        <option value="highest">Highest Score</option>
+                        <option value="lowest">Lowest Score</option>
+                    </select>
+                </div>
+                
+                <div class="score-list-container">
+                    <div class="score-list-header">
+                        <div class="score-header-date">Date</div>
+                        <div class="score-header-title">Quiz</div>
+                        <div class="score-header-score">Score</div>
+                        <div class="score-header-actions">Actions</div>
+                    </div>
+                    
+                    <div class="score-list" id="score-list">
+                        <!-- Score items will be dynamically inserted here -->
+                    </div>
+                </div>
+                
+                <div class="empty-state" id="no-scores-message">
+                    <div class="empty-icon">📊</div>
+                    <h3>No Quiz Scores Yet</h3>
+                    <p>Complete some quizzes to see your performance history here!</p>
+                    <a href="index.html" class="start-quiz-link">Start a Quiz</a>
+                </div>
+            </div>
+            
+            <div class="actions-container">
+                    <span class="back-icon"></span> Back to Homepage
+                </a>
+            </div>
+        </div>
+
+        <footer class="enhanced-footer">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Quiz Master</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Mobile App</a></li>
+                        <li><a href="#">Desktop App</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">About Us</a></li>
+                    </ul>
+                </div>
+                
+                <!-- ...existing code... -->
+                
+                <div class="footer-column">
+                    <h3>Help</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright-bar">
+                <div>© <span id="copyright-year">2025</span> QUIZ MASTER, INC. ALL RIGHTS RESERVED.</div>
+                <button id="scroll-top" class="scroll-top">Back to top</button>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+    <script src="footer.js"></script>
+</body>
+</html>
